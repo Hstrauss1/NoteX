@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  h1 {
+    @apply text-2xl font-medium;
+  }
+
+  h2 {
+    @apply text-xl font-medium;
+  }
+
+  h3 {
+    @apply text-lg font-medium;
+  }
+
+  h4 {
+    @apply text-base font-medium;
+  }
+
+  h5 {
+    @apply text-sm font-medium;
+  }
+
+  h6 {
+    @apply text-xs font-medium;
+  }
+
+  label {
+    @apply text-sm text-neutral-700 dark:text-neutral-300;
+  }
+
+  hr {
+    @apply border-t border-neutral-200 dark:border-neutral-700;
+  }
+}
+
+@layer components {
+  .wm-auto {
+    @apply w-full max-w-[750px] mx-auto;
+  }
+
+  .link {
+    @apply flex items-center justify-center gap-1 underline underline-offset-4 decoration-neutral-300 dark:decoration-neutral-600 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-3.5 [&_svg]:size-3.5 [&_svg]:shrink-0 transition-transform active:scale-95;
+  }
+}
