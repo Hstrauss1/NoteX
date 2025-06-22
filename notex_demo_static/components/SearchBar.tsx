@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import useSearch from "../hooks/useSearch";
-import { Note } from "@/src/lib/demoNotes"; // Adjust if needed
+import { Note } from "@/lib/demoData";
 
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState("");
