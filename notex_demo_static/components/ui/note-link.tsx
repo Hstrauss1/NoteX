@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Note } from "../../lib/demoData";    // ← adjust path if needed
+import { Note } from "../../lib/demoNotes";    // ← adjust path if needed
 import Tag from "./tag";
 
 /* ---------- Optional loading skeleton ---------- */
