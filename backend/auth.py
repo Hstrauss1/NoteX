@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify, request, g
 from supabase import Client, create_client
 from supabase.lib.client_options import SyncClientOptions
-
+DEMO_MODE = os.getenv("DEMO_MODE", "false").lower() == "true"
 load_dotenv()
 
 app = Flask(__name__)
