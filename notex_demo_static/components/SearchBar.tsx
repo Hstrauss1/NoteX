@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import useSearch from "../hooks/useSearch";
-import { Note } from '@/src/lib/demoNotes';
-const SearchBar = () => {
+import { Note } from "@/src/lib/demoNotes";   // adjust the path if your folder differs
+
+const SearchBar: React.FC = () => {
   const [query, setQuery] = useState("");
   const { results, loading, searchNotes } = useSearch();
 
@@ -17,11 +18,11 @@ const SearchBar = () => {
       <button onClick={() => searchNotes(query)}>Search</button>
 
       {loading && <p>Loading...</p>}
-      
+
       {results.length > 0 && (
         <ul>
-          {results.map((note) => (
-            <li key={note.note_id}>{note.title}</li>
+          {results.map((note: Note) => (
+            <li key={note.id}>{note.title}</li>   {/* use note.id instead of note.note_id */}
           ))}
         </ul>
       )}
