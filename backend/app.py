@@ -6,7 +6,7 @@ from note import create_note, fetch_note_comments, fetch_note_ids_by_user, fetch
 from auth import authenticate_request
 from user import fetch_user_by_id, get_or_create_user
 from interaction import like_note, comment_note, check_points, update_note_cost, update_user_points, add_tag, get_tags, get_liked_notes, get_notes_by_tag, get_notes_by_tags_match, update_tag, delete_tag, is_note_unlocked, has_user_liked_note, InsufficientPointsError, search_tags
-
+DEMO_MODE = os.getenv("DEMO_MODE", "false").lower() == "true"
 app = Flask(__name__)
 
 @app.before_request
