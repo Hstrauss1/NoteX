@@ -1,20 +1,14 @@
+import { demoNotes } from "@/lib/demoData";
+import NoteLink from "@/components/ui/note-link";
+import SearchBar from "@/components/SearchBar";
 
-'use client';
-import { demoNotes } from '@/lib/demoNotes';
-export default function DemoHome() {
+export default function HomePage() {
   return (
-    <div className="max-w-3xl mx-auto p-6 space-y-6">
-      <h1 className="text-2xl font-bold">📚 NoteX Demo</h1>
-      <p className="text-gray-600">Explore sample notes. No login required.</p>
+    <div className="p-4 flex flex-col gap-6 max-w-2xl mx-auto">
+      <SearchBar />   {/* works off demoNotes via useSearch */}
       <div className="grid gap-4">
-        {demoNotes.map(note => (
-          <div key={note.id} className="p-4 border rounded-lg bg-white dark:bg-neutral-800 shadow-sm">
-            <h2 className="font-semibold">{note.course}</h2>
-            <p className="text-sm text-gray-700">{note.title}</p>
-            <a href={note.file} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline mt-2 inline-block">
-              View PDF
-            </a>
-          </div>
+        {demoNotes.map((note) => (
+          <NoteLink key={note.id} note={note} />
         ))}
       </div>
     </div>
